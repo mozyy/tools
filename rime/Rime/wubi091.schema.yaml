@@ -18,13 +18,10 @@ switches:
     reset: 0
     states: [ 中文, 西文 ]
   - name: full_shape
-    reset: 0
     states: [ 半角, 全角 ]
   - name: extended_charset
-    reset: 0
     states: [ 常用, 增廣 ]
   - name: ascii_punct
-    reset: 1
     states: [ 。，, ．， ]
 
 engine:
@@ -40,6 +37,7 @@ engine:
   segmentors:
     - ascii_segmentor
     - matcher
+    - affix_segmentor@wubi091_special
     - abc_segmentor
     - punct_segmentor
     - fallback_segmentor
@@ -47,9 +45,10 @@ engine:
     - punct_translator
     - reverse_lookup_translator
     - table_translator
+    - table_translator@wubi091_special
 
 speller:
-  delimiter: " ;'"
+  delimiter: "`"
   # max_code_length: 4 #顶字上屏 （在QQ聊天窗口出问题，会吃字，如“末笔识别”，会只留下“识别”。暂未找到解决办法。）
   auto_select: true
   auto_select_unique_candidate: true #无重码自动上屏
@@ -66,6 +65,12 @@ translator:
     - "^z.*$"
   enable_user_dict: false #禁止词序调整
   enable_sentence: false #关闭输入法连打
+
+wubi091_special:
+  tag: wubi091_special
+  dictionary: wubi091_special
+  prefix: '`' #須配合recognizer
+  tips: 〔特别〕
 
 reverse_lookup:
   dictionary: pinyin_simp
@@ -95,3 +100,4 @@ recognizer:
   import_preset: default
   patterns:
     reverse_lookup: "^z[a-z]*'?$"
+    wubi091_special: "^`[a-z]*$"

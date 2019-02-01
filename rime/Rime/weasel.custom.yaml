@@ -9,6 +9,8 @@ patch:
   "style/font_face": "Microsoft YaHei"
 # ↓ 候选字号  
   "style/font_point": 13
+# ↓ 候选字序号格式 "%s."  
+  "style/label_format": ""
 # ↓ 横排开关 
   "style/horizontal": true
 # ↓ TSF嵌入模式，编码将嵌入到光标焦点处  
