@@ -15,4 +15,5 @@ sort: by_weight
 import_tables:
 - wubi091_signal # 091 单字
 - wubi091_word # 091 词语
+- wubi091_spread # 091 z开头的扩展
 ...

@@ -32,6 +32,7 @@ type codeTables struct {
 	singleCodeTables  []codeTableItem
 	wordCodeTables    []codeTableItem
 	specialCodeTables []codeTableItem
+	spreadCodeTables  []codeTableItem
 }
 
 //GenerateRime will generate rime dict file
@@ -42,6 +43,7 @@ func GenerateRime() {
 		signalDictName  = path + "/Rime/wubi091_signal.dict.yaml"
 		specialDictName = path + "/Rime/wubi091_special.dict.yaml"
 		wordDictName    = path + "/Rime/wubi091_word.dict.yaml"
+		spreadDictName  = path + "/Rime/wubi091_spread.dict.yaml"
 		line            int
 	)
 	signalContent :=
@@ -96,6 +98,20 @@ sort: by_weight
 ...
 
 `
+	spreadContent :=
+		`# Rime dictionary: wubi091_spread
+# encoding: utf-8
+#
+# Original table author
+# yangyue <yangyue@gmail.com>
+
+---
+name: wubi091_spread
+version: "0.1"
+sort: by_weight
+...
+
+`
 
 	log.Println("converting ...")
 	file, err := os.Open(name)
@@ -117,6 +133,7 @@ sort: by_weight
 				[]codeTableItem{},
 				[]codeTableItem{},
 				[]codeTableItem{},
+				[]codeTableItem{},
 			}
 			for i, str := range strs {
 				code := match[1]
@@ -127,6 +144,9 @@ sort: by_weight
 					if strings.HasPrefix(str, "~") { // 特殊字
 						codeTables.specialCodeTables = append(codeTables.specialCodeTables,
 							codeTableItem{str[1:], code, weight - i})
+					} else if strings.HasPrefix(code, "z") { // z 开头
+						codeTables.spreadCodeTables = append(codeTables.spreadCodeTables,
+							codeTableItem{str, code, weight - i})
 					} else if len([]rune(str)) < 2 { // 单字
 						codeTables.singleCodeTables = append(codeTables.singleCodeTables,
 							codeTableItem{str, code, weight - i})
@@ -140,6 +160,7 @@ sort: by_weight
 			sort.Sort(codeTable(codeTables.specialCodeTables))
 			sort.Sort(codeTable(codeTables.singleCodeTables))
 			sort.Sort(codeTable(codeTables.wordCodeTables))
+			sort.Sort(codeTable(codeTables.spreadCodeTables))
 			for _, item := range codeTables.specialCodeTables {
 				specialContent += item.String()
 			}
@@ -148,6 +169,9 @@ sort: by_weight
 			}
 			for _, item := range codeTables.wordCodeTables {
 				wordContent += item.String()
+			}
+			for _, item := range codeTables.spreadCodeTables {
+				spreadContent += item.String()
 			}
 		}
 		// limit--
@@ -170,6 +194,11 @@ sort: by_weight
 	wg.Add(1)
 	go func() {
 		writeFile(wordDictName, wordContent)
+		wg.Done()
+	}()
+	wg.Add(1)
+	go func() {
+		writeFile(spreadDictName, spreadContent)
 		wg.Done()
 	}()
 	wg.Wait()

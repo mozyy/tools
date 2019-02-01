@@ -4,15 +4,17 @@
 ## clone项目 并转换码表()
 ```shell
 # clone
-git clone git@github.com:mozyy/rime.git $USERPROFILE/AppData/Roaming/Rime
+go get git@github.com:mozyy/tools.git
 
-# to rime
-cd $USERPROFILE/AppData/Roaming/Rime
+# to dir
+cd $GOPATH/src/github.com/mozyy/tools/rime
 
-# run convert codeTabel
+# start run convert codeTabel
 go run ./
 ```
+## 然后重新部署小狼亳
 
+## build
 ```shell
 # build
 go build  -o ./convertcodetable.exe ./
