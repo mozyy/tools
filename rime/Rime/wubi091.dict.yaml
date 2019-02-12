@@ -14,6 +14,6 @@ sort: by_weight
 # 导入别的码表，可以添加多个
 import_tables:
 - wubi091_signal # 091 单字
-- wubi091_word # 091 词语
+# - wubi091_word # 091 词语
 - wubi091_spread # 091 z开头的扩展
 ...
