@@ -1,0 +1,14 @@
+# Rime schema settings
+# encoding: utf-8
+
+schema:
+  schema_id: wubi091_special
+  name: "五笔091_特殊"
+  version: "0.1"
+  author:
+    - 發明人 杨跃
+  description: |
+    五筆字型091版, 仅搭配wubi091使用
+
+translator:
+  dictionary: wubi091_special
