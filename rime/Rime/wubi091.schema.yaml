@@ -12,6 +12,7 @@ schema:
     敲 z 鍵進入拼音反查
   dependencies:
     - pinyin_simp
+    - wubi091_special
 
 switches:
   - name: ascii_mode
@@ -48,7 +49,8 @@ engine:
     - table_translator@wubi091_special
 
 speller:
-  delimiter: "`"
+  delimiter: " ;'"
+  # delimiter: "`"
   # max_code_length: 4 #顶字上屏 （在QQ聊天窗口出问题，会吃字，如“末笔识别”，会只留下“识别”。暂未找到解决办法。）
   auto_select: true
   auto_select_unique_candidate: true #无重码自动上屏
@@ -71,6 +73,8 @@ wubi091_special:
   dictionary: wubi091_special
   prefix: '`' #須配合recognizer
   tips: 〔特别〕
+  enable_user_dict: false #禁止词序调整
+  enable_sentence: false #关闭输入法连打
 
 reverse_lookup:
   dictionary: pinyin_simp
