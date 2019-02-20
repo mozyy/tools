@@ -52,8 +52,8 @@ speller:
   delimiter: " ;'"
   # delimiter: "`"
   # max_code_length: 4 #顶字上屏 （在QQ聊天窗口出问题，会吃字，如“末笔识别”，会只留下“识别”。暂未找到解决办法。）
-  auto_select: true
-  auto_select_unique_candidate: true #无重码自动上屏
+  auto_select: false
+  auto_select_unique_candidate: false #无重码自动上屏
 
 translator:
   dictionary: wubi091
