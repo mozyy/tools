@@ -3,6 +3,7 @@ package util
 import (
 	"bufio"
 	"fmt"
+	"go/build"
 	"io/ioutil"
 	"log"
 	"os"
@@ -38,7 +39,7 @@ type codeTables struct {
 //GenerateRime will generate rime dict file
 func GenerateRime() {
 	var (
-		path            = os.Getenv("GOPATH") + "/src/github.com/mozyy/tools/rime"
+		path            = build.Default.GOPATH + "/src/github.com/mozyy/tools/rime"
 		name            = path + "/点儿词库1901版/码表.txt"
 		signalDictName  = path + "/Rime/wubi091_signal.dict.yaml"
 		specialDictName = path + "/Rime/wubi091_special.dict.yaml"
