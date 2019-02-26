@@ -11,6 +11,8 @@ import (
 
 // CopyRimeFiles copy rime dir to user profile dir
 func CopyRimeFiles() {
+	log.Println("copying ...")
+	defer log.Println("copying complete.")
 	var (
 		rimeDir = os.Getenv("GOPATH") + "/src/github.com/mozyy/tools/rime/Rime/"
 		distDir = os.Getenv("USERPROFILE") + "/AppData/Roaming/Rime/"
@@ -20,7 +22,6 @@ func CopyRimeFiles() {
 	if err != nil {
 		log.Panicln(err)
 	}
-	log.Println("copying ...")
 	for _, file := range files {
 		name := file.Name()
 		wg.Add(1)
@@ -33,5 +34,4 @@ func CopyRimeFiles() {
 		}()
 	}
 	wg.Wait()
-	log.Println("copying complete.")
 }

@@ -25,7 +25,6 @@ var Dicts = []engin.Dict{
 ---
 name: wubi091_special
 version: "0.1"
-sort: by_weight
 ...
 
 `,
@@ -48,7 +47,6 @@ sort: by_weight
 ---
 name: wubi091_spread
 version: "0.1"
-sort: by_weight
 ...
 
 `,
@@ -68,17 +66,6 @@ sort: by_weight
 ---
 name: wubi091_signal
 version: "0.1"
-sort: by_weight
-encoder:
-	exclude_patterns:
-		- '^z.*$'
-	rules:
-		- length_equal: 2
-			formula: "AaAbBaBb"
-		- length_equal: 3
-			formula: "AaBaCaCb"
-		- length_in_range: [4, 10]
-			formula: "AaBaCaZa"
 ...
 
 `,
@@ -90,7 +77,7 @@ encoder:
 			if i > 2 && codeLen > 1 {
 				lastCode := code[:codeLen-1]
 				if d.Result[i-1].Code == lastCode && str != d.Result[i-1].Str {
-					for i > 1 && d.Result[i-1].Code == lastCode {
+					for i > 0 && d.Result[i-1].Code == lastCode {
 						count++
 						i--
 					}
@@ -114,7 +101,6 @@ encoder:
 ---
 name: wubi091_word
 version: "0.1"
-sort: by_weight
 ...
 
 `,

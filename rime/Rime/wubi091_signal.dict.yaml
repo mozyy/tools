@@ -7,26 +7,15 @@
 ---
 name: wubi091_signal
 version: "0.1"
-sort: by_weight
-encoder:
-	exclude_patterns:
-		- '^z.*$'
-	rules:
-		- length_equal: 2
-			formula: "AaAbBaBb"
-		- length_equal: 3
-			formula: "AaBaCaCb"
-		- length_in_range: [4, 10]
-			formula: "AaBaCaZa"
 ...
 
 或	a
 七	a
 花	a
-式	a
+式	aa
 工	aa
 戒	aa
-匿	aa
+匿	aad
 慝	aad
 苷	aaf
 甙	aaf

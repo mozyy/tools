@@ -5,6 +5,7 @@ import (
 
 	"github.com/mozyy/tools/rime/config"
 	"github.com/mozyy/tools/rime/engin"
+	"github.com/mozyy/tools/rime/util"
 )
 
 func main() {
@@ -13,6 +14,6 @@ func main() {
 	)
 	engin.Run(path, config.Dicts)
 	// util.GenerateRime()
-	// util.CopyRimeFiles()
+	util.CopyRimeFiles()
 
 }
