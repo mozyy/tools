@@ -6,11 +6,6 @@ import (
 	"github.com/mozyy/tools/rime/engin"
 )
 
-//signalDictName  = path + "/Rime/wubi091_signal.dict.yaml"
-// specialDictName = path + "/Rime/wubi091_special.dict.yaml"
-// wordDictName    = path + "/Rime/wubi091_word.dict.yaml"
-// spreadDictName  = path + "/Rime/wubi091_spread.dict.yaml"
-
 // Dicts array of dict
 var Dicts = []engin.Dict{
 	engin.Dict{ // special

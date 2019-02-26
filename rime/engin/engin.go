@@ -2,6 +2,7 @@ package engin
 
 import (
 	"bufio"
+	"errors"
 	"io/ioutil"
 	"log"
 	"os"
@@ -50,6 +51,7 @@ func Run(path string, dicts []Dict) error {
 		// }
 	}
 	wg := sync.WaitGroup{}
+	errInfos := []string{}
 	for _, dict := range dicts {
 		wg.Add(1)
 		go func(dict Dict) {
@@ -57,12 +59,14 @@ func Run(path string, dicts []Dict) error {
 			content := []byte(dict.String())
 			err := ioutil.WriteFile(distName, content, 32)
 			if err != nil {
-				log.Println(err)
+				errInfos = append(errInfos, err.Error())
 			}
 			wg.Done()
 		}(dict)
 	}
 	wg.Wait()
-
+	if len(errInfos) != 0 {
+		return errors.New(strings.Join(errInfos, "\n"))
+	}
 	return nil
 }

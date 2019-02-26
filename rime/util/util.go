@@ -1,6 +1,7 @@
 package util
 
 import (
+	"go/build"
 	"io/ioutil"
 	"log"
 	"os"
@@ -14,14 +15,14 @@ func CopyRimeFiles() {
 	log.Println("copying ...")
 	defer log.Println("copying complete.")
 	var (
-		rimeDir = os.Getenv("GOPATH") + "/src/github.com/mozyy/tools/rime/Rime/"
+		rimeDir = build.Default.GOPATH + "/src/github.com/mozyy/tools/rime/Rime/"
 		distDir = os.Getenv("USERPROFILE") + "/AppData/Roaming/Rime/"
 	)
-	var wg sync.WaitGroup
 	files, err := ioutil.ReadDir(rimeDir)
 	if err != nil {
 		log.Panicln(err)
 	}
+	wg := sync.WaitGroup{}
 	for _, file := range files {
 		name := file.Name()
 		wg.Add(1)
