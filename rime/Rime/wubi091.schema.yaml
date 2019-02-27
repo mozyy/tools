@@ -20,10 +20,13 @@ switches:
     states: [ 中文, 西文 ]
   - name: full_shape
     states: [ 半角, 全角 ]
-  - name: extended_charset
-    states: [ 常用, 增廣 ]
+  # - name: extended_charset
+  #   states: [ 常用, 增廣 ]
   - name: ascii_punct
     states: [ 。，, ．， ]
+  # trime
+  - options: [ _key_K_symbols40 ]
+    states: [ "😃" ]
 
 engine:
   processors:
