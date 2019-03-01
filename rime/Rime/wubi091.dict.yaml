@@ -25,4 +25,3 @@ import_tables:
 git commit -am ''	zcm
 git pull 	zpl
 git push 	zps
-npm run 	znr
