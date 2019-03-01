@@ -28,6 +28,10 @@ func Run(path string, dicts []Dict) error {
 	// limit := 20
 	for scanner.Scan() {
 		b := scanner.Text()
+		// 跳过#开头
+		if strings.HasPrefix(b, "#") {
+			continue
+		}
 		matchs := codeTableRg.FindAllStringSubmatch(b, -1)
 		for _, match := range matchs {
 			strs := strings.Split(match[2], " ")

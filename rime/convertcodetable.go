@@ -1,6 +1,7 @@
 package main
 
 import (
+	"flag"
 	"go/build"
 	"log"
 
@@ -11,13 +12,24 @@ import (
 
 func main() {
 	var (
-		path = build.Default.GOPATH + "/src/github.com/mozyy/tools/rime"
+		path              = build.Default.GOPATH + "/src/github.com/mozyy/tools/rime"
+		help, parse, copy bool
 	)
-	err := engin.Run(path, config.Dicts)
-	if err != nil {
-		log.Panicln(err)
+	flag.BoolVar(&help, "h", false, "this help")
+	flag.BoolVar(&parse, "np", false, "not parse code table")
+	flag.BoolVar(&copy, "nc", false, "not copy to userfile dir")
+	flag.Parse()
+	if help {
+		flag.Usage()
 	}
-	// util.GenerateRime()
-	util.CopyRimeFiles()
-
+	if !parse {
+		err := engin.Run(path, config.Dicts)
+		if err != nil {
+			log.Panicln(err)
+		}
+	}
+	if !copy {
+		// util.GenerateRime()
+		util.CopyRimeFiles()
+	}
 }

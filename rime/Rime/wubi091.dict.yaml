@@ -10,10 +10,19 @@
 ---
 name: wubi091
 version: "0.1"
-sort: by_weight
 # 导入别的码表，可以添加多个
 import_tables:
 - wubi091_signal # 091 单字
 # - wubi091_word # 091 词语
 - wubi091_spread # 091 z开头的扩展
 ...
+
+# 自己的词, 建议z开头, 排在 import_tables 前
+杨跃	zy
+18381335182	zsj
+513101199304081918	zid
+四川妥妥递科技有限公司	zgs
+git commit -am ''	zcm
+git pull 	zpl
+git push 	zps
+npm run 	znr
