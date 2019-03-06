@@ -1,6 +1,26 @@
 package engin
 
-import "fmt"
+import (
+	"fmt"
+	"sort"
+)
+
+type codeTableSlice []CodeTableItem
+
+func (c codeTableSlice) Len() int {
+	return len(c)
+}
+
+// Less reports whether the element with
+// index i should sort before the element with index j.
+func (c codeTableSlice) Less(i, j int) bool {
+	return c[i].Code < c[j].Code
+}
+
+// Swap swaps the elements with indexes i and j.
+func (c codeTableSlice) Swap(i, j int) {
+	c[i], c[j] = c[j], c[i]
+}
 
 // Dict is engin rime dict config
 type Dict struct {
@@ -18,6 +38,7 @@ func (d *Dict) Append(code, str string) {
 // String is func
 func (d *Dict) String() string {
 	str := d.ContentProfix
+	sort.Stable(codeTableSlice(d.Result))
 	for _, v := range d.Result {
 		str += v.String()
 	}
