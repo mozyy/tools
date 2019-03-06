@@ -21,6 +21,7 @@ func main() {
 	flag.Parse()
 	if help {
 		flag.Usage()
+		return
 	}
 	if !parse {
 		err := engin.Run(path, config.Dicts)
