@@ -59563,7 +59563,7 @@ lkyn 加词 贺词
 lkyp 回访 加亮
 lkyt 回话 加州 贺州 四川话
 lkyy 回文
-ll 男 田 ~👨
+ll 男 田 蹭 ~👨
 lla 田野 曾国藩
 llaa 男式 男工
 llaf 男鞋 男靴
@@ -59629,7 +59629,7 @@ llii 畏罪潜逃
 llij 思路清晰
 llim 囫囵觉
 llip 逻辑学家
-llj 蹭 罾
+llj 罾
 lljf 罾
 lljg ~㽪
 lljl 田螺
@@ -69278,7 +69278,7 @@ noym 必赢
 noyn 惦记
 noyo 避祸就福
 noyy 民粹主义
-np 民族 必定
+np 忱 惋 民族 必定
 npa 民族英雄
 npad 民族英雄
 npaf 民族区域
@@ -69353,7 +69353,6 @@ nppi ~遅
 nppk 异军突起
 nppp 羼
 npps 民族之林
-npq 忱 惋
 npqp 民族解放
 npqs 民族危机
 npr 民族的
