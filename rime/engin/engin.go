@@ -54,6 +54,11 @@ func Run(path string, dicts []Dict) error {
 		// 	break
 		// }
 	}
+	err = writeFiles(path, dicts)
+	return err
+}
+
+func writeFiles(path string, dicts []Dict) error {
 	wg := sync.WaitGroup{}
 	errInfos := []string{}
 	for _, dict := range dicts {
@@ -65,6 +70,7 @@ func Run(path string, dicts []Dict) error {
 			if err != nil {
 				errInfos = append(errInfos, err.Error())
 			}
+			// fmt.Printf("write complete: %s \n", distName)
 			wg.Done()
 		}(dict)
 	}

@@ -68,7 +68,7 @@ version: "0.1"
 			return len([]rune(str)) < 2
 		},
 		BeforeAppend: func(code, str *string, d engin.Dict) {
-			transCode(code, str, d)
+			transCode(code, str, d.Result)
 		},
 	},
 	engin.Dict{ // word
@@ -95,18 +95,52 @@ version: "0.1"
 // 阿	bs  -> 阿	bs
 // 阱	bs  -> 阱	bs
 // 耵	bsh -> 耵	bs
-func transCode(code, str *string, d engin.Dict) {
-	i, count, codeLen := len(d.Result), 0, len(*code)
-	if i > 2 && codeLen > 1 {
-		lastCode := (*code)[:codeLen-1]
-		if d.Result[i-1].Code == lastCode && *str != d.Result[i-1].Str {
-			for i > 0 && d.Result[i-1].Code == lastCode {
-				count++
-				i--
+func transCode(code, str *string, c []engin.CodeTableItem) {
+
+	for tCode := (*code)[:len(*code)-1]; len(tCode) > 0; tCode = tCode[:len(tCode)-1] {
+		sameCode := findDict(c, func(c engin.CodeTableItem) bool {
+			return c.Code == tCode
+		})
+		sameStr := findDict(c, func(c engin.CodeTableItem) bool {
+			return c.Str == *str
+		})
+
+		if len(sameCode) < 3 {
+			if len(sameStr) == 0 {
+				// fmt.Printf("sameStr: %v, sameCode: %v, tCode: %s, str: %s \n", sameStr, sameCode, tCode, *str)
+				*code = tCode
+			} else if findMinCode(sameStr) > 1 || len(*code) != 4 {
+				sameStrs := findDict(sameStr, func(c engin.CodeTableItem) bool {
+					return c.Code == tCode
+				})
+				if len(sameStrs) == 0 {
+					*code = tCode
+				}
+			} else {
+				return
 			}
-			if count < 3 {
-				*code = lastCode
-			}
+		} else {
+			return
 		}
 	}
+}
+
+func findDict(c []engin.CodeTableItem, f func(engin.CodeTableItem) bool) []engin.CodeTableItem {
+	r := []engin.CodeTableItem{}
+	for i := range c {
+		if f(c[i]) {
+			r = append(r, c[i])
+		}
+	}
+	return r
+}
+
+func findMinCode(r []engin.CodeTableItem) int {
+	i := len(r[0].Code)
+	for _, v := range r {
+		if len(v.Code) < i {
+			i = len(v.Code)
+		}
+	}
+	return i
 }
