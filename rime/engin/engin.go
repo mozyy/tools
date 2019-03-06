@@ -28,7 +28,7 @@ func Run(path string, dicts []Dict) error {
 	// limit := 20
 	for scanner.Scan() {
 		b := scanner.Text()
-		// 跳过#开头
+		// 跳过#开头的注释
 		if strings.HasPrefix(b, "#") {
 			continue
 		}
@@ -41,7 +41,7 @@ func Run(path string, dicts []Dict) error {
 				for i, dict := range dicts {
 					if dict.Match(code, str) {
 						if dict.BeforeAppend != nil {
-							code, str = dict.BeforeAppend(code, str, dict)
+							dict.BeforeAppend(&code, &str, dict)
 						}
 						dicts[i].Append(code, str)
 						break

@@ -7,7 +7,7 @@ type Dict struct {
 	Result              []CodeTableItem
 	Name, ContentProfix string
 	Match               func(code, str string) bool
-	BeforeAppend        func(code, str string, d Dict) (string, string)
+	BeforeAppend        func(code, str *string, d Dict)
 }
 
 // Append is append CodeTableItem to Dict

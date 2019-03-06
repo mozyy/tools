@@ -88,8 +88,8 @@ version: "0.1"
 		Match: func(code, str string) bool {
 			return strings.HasPrefix(str, "~")
 		},
-		BeforeAppend: func(code, str string, d Dict) (string, string) {
-			return code, string(str[1:])
+		BeforeAppend: func(code, str *string, d Dict) {
+			*str = string((*str)[1:])
 		},
 	},
 	Dict{ // spread
@@ -129,21 +129,23 @@ version: "0.1"
 		Match: func(code, str string) bool {
 			return len([]rune(str)) < 2
 		},
-		BeforeAppend: func(code, str string, d Dict) (string, string) {
-			i, count, codeLen := len(d.Result), 0, len(code)
+		BeforeAppend: func(code, str *string, d Dict) {
+			i, count, codeLen := len(d.Result), 0, len(*code)
+			// 阿	bs  -> 阿	bs
+			// 阱	bs  -> 阱	bs
+			// 耵	bsh -> 耵	bs
 			if i > 2 && codeLen > 1 {
-				lastCode := code[:codeLen-1]
-				if d.Result[i-1].Code == lastCode && str != d.Result[i-1].Str {
+				lastCode := (*code)[:codeLen-1]
+				if d.Result[i-1].Code == lastCode && *str != d.Result[i-1].Str {
 					for i > 0 && d.Result[i-1].Code == lastCode {
 						count++
 						i--
 					}
 					if count < 3 {
-						code = lastCode
+						*code = lastCode
 					}
 				}
 			}
-			return code, str
 		},
 	},
 	Dict{ // word
