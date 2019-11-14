@@ -516,7 +516,6 @@ version: "0.1"
 葙	as
 葙	ash
 蕈	asj
-蕈	asjj
 苛	ask
 菘	asm
 菘	asmc
@@ -679,6 +678,7 @@ version: "0.1"
 也	b
 出	b
 陈	ba
+⌫	ba
 子	bb
 耶	bb
 陬	bb
@@ -853,13 +853,13 @@ version: "0.1"
 戏	ca
 劲	ca
 颈	ca
-颈	cad
 鳓	caf
 鳓	cafl
 刭	caj
 弁	caj
 弁	cajj
 鲽	can
+⇪	cap
 迳	cap
 驱	car
 骁	cat
@@ -1011,13 +1011,16 @@ version: "0.1"
 驴	co
 骆	co
 馬	coi
+⌘	com
 鳊	com
-鳊	coma
+⌘	coml
 骟	con
+⌃	con
+⌃	cont
 鳞	coq
 魚	cou
 鳙	cov
-鳙	cove
+鳙	covh
 鲜	cp
 驼	cp
 鲩	cp
@@ -1025,6 +1028,7 @@ version: "0.1"
 鲂	cpt
 鳝	cpu
 鳝	cpuk
+驼	cpx
 鸡	cq
 欢	cq
 允	cq
@@ -1089,10 +1093,9 @@ version: "0.1"
 鳆	ctjt
 骢	ctl
 鳅	cto
-鳅	ctoy
 欸	ctq
+⌃	ctr
 鲧	ctx
-鲧	ctxi
 稣	cty
 骥	cu
 骈	cu
@@ -1182,11 +1185,11 @@ version: "0.1"
 厣	ddl
 飙	ddm
 魇	ddr
-魇	ddrc
 餍	ddw
 胡	de
 唇	de
 辰	de
+鬊	ded
 髦	dee
 硼	dee
 辱	def
@@ -1201,8 +1204,8 @@ version: "0.1"
 蜃	deju
 唇	dek
 鬟	del
+⌫	del
 鬛	del
-鬟	dele
 髯	dem
 鬓	dep
 鬃	dep
@@ -1353,7 +1356,6 @@ version: "0.1"
 碳	dmd
 耐	dmf
 碉	dmf
-碉	dmfk
 硐	dmg
 硐	dmgk
 厕	dmj
@@ -1388,8 +1390,7 @@ version: "0.1"
 戍	dny
 灰	do
 矿	do
-磷	do
-硌	dog
+硌	do
 盔	dol
 碥	dom
 碥	doma
@@ -1432,7 +1433,6 @@ version: "0.1"
 厢	dsh
 碴	dsj
 剞	dsj
-碴	dsjg
 砢	dsk
 欹	dsk
 剞	dsk
@@ -1634,7 +1634,6 @@ version: "0.1"
 刖	ejh
 胂	ejhh
 氘	ejk
-氘	ejkk
 氲	ejl
 腽	ejl
 氲	ejld
@@ -1779,6 +1778,7 @@ version: "0.1"
 胜	es
 彩	es
 腰	es
+⎋	esc
 舾	esg
 肼	esh
 膘	esi
@@ -1987,6 +1987,7 @@ version: "0.1"
 坡	fh
 坡	fhc
 址	fhg
+埗	fhi
 坫	fhk
 坫	fhkg
 盂	fhl
@@ -2152,7 +2153,6 @@ version: "0.1"
 懿	fpg
 懿	fpgi
 毂	fpl
-毂	fplc
 壳	fpm
 毂	fpm
 悫	fpm
@@ -2238,8 +2238,8 @@ version: "0.1"
 耆	fxj
 坳	fxl
 坶	fxn
-坶	fxnn
 坶	fxy
+坶	fxyy
 坑	fy
 雯	fy
 坟	fy
@@ -2290,11 +2290,11 @@ version: "0.1"
 臻	gcf
 郅	gcf
 天	gd
-吞	gd
 瑚	gd
+忝	gd
 瑚	gde
-忝	gdi
 蚕	gdj
+吞	gdk
 顼	gdm
 顼	gdmy
 琦	gds
@@ -2383,7 +2383,6 @@ version: "0.1"
 豇	gka
 囊	gke
 豉	gkf
-蠹	gkj
 噩	gkk
 卅	gkk
 卅	gkkk
@@ -2495,7 +2494,6 @@ version: "0.1"
 趸	gql
 劢	gql
 劢	gqlt
-趸	gqlu
 赘	gqm
 熬	gqo
 遨	gqp
@@ -3033,6 +3031,7 @@ version: "0.1"
 泪	ih
 涉	ih
 婆	ihc
+淑	ihc
 小	ihci
 濒	ihd
 淑	ihi
@@ -3140,6 +3139,7 @@ version: "0.1"
 氅	imen
 沛	imf
 滏	imf
+滏	imfu
 溅	img
 汕	imh
 测	imj
@@ -3264,7 +3264,6 @@ version: "0.1"
 渣	isj
 潭	isj
 漕	isj
-漕	isjg
 淞	ism
 淞	ismc
 湛	isn
@@ -3334,6 +3333,7 @@ version: "0.1"
 溢	iuu
 涕	iux
 滋	iux
+滋	iuxx
 誉	iuy
 梁	iv
 津	iv
@@ -3544,6 +3544,8 @@ version: "0.1"
 晃	ji
 晁	ji
 +	ji
+±	jia
+∓	jia
 蛸	jie
 螳	jik
 晁	jiq
@@ -3581,7 +3583,6 @@ version: "0.1"
 愚	jmc
 禺	jmc
 蚣	jmc
-蚣	jmcy
 映	jmd
 蚺	jmf
 蜩	jmf
@@ -3982,7 +3983,6 @@ version: "0.1"
 饕	kgw
 咦	kgx
 嗉	kgx
-嗉	kgxi
 嘴	kh
 患	kh
 吕	kh
@@ -4449,8 +4449,8 @@ version: "0.1"
 袈	lky
 男	ll
 田	ll
-蹭	ll
-圜	llg
+圜	ll
+蹭	llj
 罾	llj
 罾	lljf
 圜	llk
@@ -4755,7 +4755,6 @@ version: "0.1"
 帻	mhg
 帧	mhh
 帔	mhh
-帔	mhhc
 帽	mhj
 幔	mhj
 幌	mhj
@@ -4838,6 +4837,7 @@ version: "0.1"
 赕	mo
 赃	mof
 赂	mog
+赕	moo
 嶙	moq
 嶙	moqh
 嵝	mov
@@ -4918,7 +4918,6 @@ version: "0.1"
 嶂	muj
 嵫	mux
 罔	muy
-罔	muyn
 罔	muyv
 分	mv
 盆	mv
@@ -5061,6 +5060,7 @@ version: "0.1"
 尿	ni
 悄	ni
 屑	nie
+氹	nii
 惝	nim
 恍	niq
 犀	nir
@@ -5173,13 +5173,13 @@ version: "0.1"
 慵	nov
 屡	nov
 慵	nove
-忱	np
-惋	np
 屄	np
+恽	np
+羼	np
 恽	npl
-恽	nplh
 羼	npp
-羼	nppp
+忱	npq
+惋	npq
 懈	nq
 恂	nq
 惚	nq
@@ -5190,7 +5190,6 @@ version: "0.1"
 戳	nra
 翟	nrf
 習	nrf
-習	nrff
 惟	nrg
 惶	nrg
 忻	nrh
@@ -5257,6 +5256,7 @@ version: "0.1"
 翏	nwer
 夬	nwi
 鹨	nwq
+𪨊	nww
 惯	nx
 怫	nx
 尼	nx
@@ -5410,7 +5410,6 @@ version: "0.1"
 炸	ol
 糞	ola
 廛	ola
-廛	olaf
 煨	ole
 炸	olg
 祚	olg
@@ -5475,6 +5474,7 @@ version: "0.1"
 烊	oph
 庠	opk
 粽	opl
+⌥	opt
 菐	opu
 菐	opuu
 熔	opw
@@ -5754,8 +5754,9 @@ version: "0.1"
 窜	pkh
 军	pl
 宗	pl
-郓	pl
+裸	pl
 郓	plb
+郓	plbh
 窄	plf
 寰	plg
 皲	plh
@@ -5913,7 +5914,6 @@ version: "0.1"
 褓	pwk
 褓	pwks
 褓	pwky
-察	pwl
 羚	pwp
 衿	pwp
 於	pwu
@@ -6050,7 +6050,6 @@ version: "0.1"
 觖	qenw
 邂	qep
 铣	qeq
-铣	qeqn
 觚	qer
 觚	qery
 觞	qet
@@ -6085,7 +6084,6 @@ version: "0.1"
 锖	qgeg
 钙	qgh
 钲	qgh
-钲	qghg
 钚	qgi
 钚	qgiy
 镉	qgl
@@ -6105,6 +6103,7 @@ version: "0.1"
 尔	qi
 乐	qi
 销	qi
+销	qie
 玺	qig
 镗	qik
 镗	qikf
@@ -6384,7 +6383,6 @@ version: "0.1"
 锼	qvh
 锼	qvhc
 铷	qvk
-铷	qvkg
 锱	qvl
 贸	qvm
 煞	qvo
@@ -6665,7 +6663,8 @@ version: "0.1"
 损	rkm
 摆	rl
 舞	rl
-摁	rl
+捉	rl
+摁	rld
 掴	rlg
 擐	rlg
 掴	rlgy
@@ -6896,8 +6895,7 @@ version: "0.1"
 絷	rvxi
 拨	rvy
 执	rvy
-垫	rvy
-絷	rvyi
+絷	rvy
 蛰	rvyj
 贽	rvym
 失	rw
@@ -6985,6 +6983,7 @@ version: "0.1"
 枢	sar
 桡	sat
 醛	saw
+㍿	saw
 醛	sawg
 李	sb
 极	sb
@@ -7054,7 +7053,6 @@ version: "0.1"
 桴	seb
 桴	sebg
 楹	sec
-楹	secl
 棚	see
 酹	sef
 梏	sek
@@ -7080,7 +7078,6 @@ version: "0.1"
 酐	sfh
 杆	sfj
 楮	sfj
-楮	sfjg
 桔	sfk
 檑	sfl
 楠	sfm
@@ -7089,7 +7086,6 @@ version: "0.1"
 棱	sfmt
 椟	sfn
 栲	sfs
-栲	sfsn
 材	sft
 樯	sfu
 栳	sfx
@@ -7131,6 +7127,9 @@ version: "0.1"
 眚	shff
 榭	shfy
 椒	shi
+⇧	shi
+⇧	shil
+⇧	shit
 棹	shj
 桁	shl
 桁	shlh
@@ -7213,7 +7212,6 @@ version: "0.1"
 桐	smg
 柚	smg
 酮	smg
-酮	smgk
 柿	smi
 樱	smm
 栅	smm
@@ -7338,7 +7336,6 @@ version: "0.1"
 ℃	ssd
 栖	ssg
 酊	ssh
-酊	sshh
 槽	ssj
 楂	ssj
 柯	ssk
@@ -7380,7 +7377,6 @@ version: "0.1"
 桕	svg
 楗	svg
 桕	svgg
-楗	svgp
 棣	svi
 棂	svo
 枪	sw
@@ -7736,7 +7732,6 @@ version: "0.1"
 稚	tr
 箍	tra
 箝	tra
-箍	trah
 筢	trc
 箨	trc
 筢	trcb
@@ -7812,7 +7807,6 @@ version: "0.1"
 筏	twau
 筌	twg
 簦	twg
-筌	twgf
 黏	twh
 筱	twh
 黏	twhk
@@ -7829,7 +7823,6 @@ version: "0.1"
 鳘	txcf
 篆	txe
 胤	txe
-胤	txen
 篆	txeu
 筚	txf
 繁	txi
@@ -8437,7 +8430,6 @@ version: "0.1"
 甾	vlf
 甾	vlff
 嬛	vlg
-嬛	vlge
 狎	vlh
 狎	vlhh
 剿	vlj
@@ -8507,6 +8499,7 @@ version: "0.1"
 婉	vpq
 嫔	vpr
 狞	vps
+⌫	vps
 妨	vpt
 姹	vpt
 姹	vpta
@@ -8905,7 +8898,6 @@ version: "0.1"
 僬	wroy
 傀	wrq
 俾	wrt
-俾	wrtf
 佚	wrw
 何	ws
 体	ws
@@ -9444,6 +9436,7 @@ version: "0.1"
 亶	ylk
 禀	ylki
 谡	ylm
+𠅤	yln
 裹	yls
 谏	yls
 谏	ylsy
