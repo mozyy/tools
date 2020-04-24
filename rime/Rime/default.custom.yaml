@@ -14,7 +14,8 @@ patch:
     Control_L: clear
     Control_R: commit_text
   schema_list:
-    - {schema: wubi091}
+    - {schema: wubi86}
+    # - {schema: wubi091}
     - {schema: pinyin_simp}
   switcher/hotkeys:
     - F4

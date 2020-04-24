@@ -1,0 +1,85 @@
+# Rime schema settings
+# encoding: utf-8
+
+schema:
+  schema_id: wubi86
+  name: "五笔86"
+  version: "0.21"
+  author:
+    - 發明人 王永民先生
+  description: |
+    五筆字型86版
+    碼表源自 ibus-table
+    敲 z 鍵進入拼音反查
+  dependencies:
+    - pinyin_simp
+
+switches:
+  - name: ascii_mode
+    reset: 1
+    states: [ 中文, 西文 ]
+  - name: full_shape
+    states: [ 半角, 全角 ]
+  - name: extended_charset
+    states: [ 常用, 增廣 ]
+  - name: ascii_punct
+    states: [ 。，, ．， ]
+
+engine:
+  processors:
+    - ascii_composer
+    - recognizer
+    - key_binder
+    - speller
+    - punctuator
+    - selector
+    - navigator
+    - express_editor
+  segmentors:
+    - ascii_segmentor
+    - matcher
+    - abc_segmentor
+    - punct_segmentor
+    - fallback_segmentor
+  translators:
+    - punct_translator
+    - reverse_lookup_translator
+    - table_translator
+# https://github.com/LEOYoon-Tsaw/Rime_collections/blob/master/Rime_description.md
+speller:
+  delimiter: " ;'"
+  # max_code_length: 4 #顶字上屏 （在QQ聊天窗口出问题，会吃字，如“末笔识别”，会只留下“识别”。暂未找到解决办法。）
+  auto_select: false
+  auto_select_unique_candidate: false #无重码自动上屏
+
+translator:
+  dictionary: wubi86
+  enable_charset_filter: false # 是否開啓字符集過濾〔僅table_translator有效。啓用cjk_minifier後可適用於script_translator〕
+  enable_sentence: false # 是否開啓自動造句
+  enable_encoder: false # 是否開啓自動造詞〔僅table_translator有效〕
+  enable_completion: false #显示未完成编码的字
+  encode_commit_history: false # 是否對已上屛詞自動成詞〔僅table_translator有效〕
+  max_phrase_length: 4  # 最大自動成詞詞長〔僅table_translator有效〕
+  disable_user_dict_for_patterns:  # 禁止某些編碼錄入用戶詞典
+    - "^z.*$"
+
+reverse_lookup:
+  dictionary: pinyin_simp
+  prefix: "z"
+  suffix: "'"
+  tips: 〔拼音〕
+  preedit_format:
+    - xform/([nl])v/$1ü/
+    - xform/([nl])ue/$1üe/
+    - xform/([jqxy])v/$1u/
+
+punctuator:
+  import_preset: default
+
+key_binder:
+  import_preset: default
+
+recognizer:
+  import_preset: default
+  patterns:
+    reverse_lookup: "^z[a-z]*'?$"
